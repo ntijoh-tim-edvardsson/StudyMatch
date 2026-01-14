@@ -1,0 +1,4 @@
+# App settings (secrets)
+
+appsettings.Development.json
+appsettings.Production.json
