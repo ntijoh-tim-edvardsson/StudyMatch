@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   //define state variables for form inputs
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(event: React.FormEvent) {
@@ -37,22 +38,28 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
 
-        <button
-          type="submit"
-          className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-        >
-          Login
-        </button>
-        <p>Don't have an account?</p>
-
-        <button
-          type="button"
-          className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-          onClick={() => navigate("/register")}
-        >Create account</button>
-      </form> 
-      
+        {password && confirmPassword && password === confirmPassword ? (
+          <>
+            <p className="text-green-600">Passwords match!</p>
+            <button
+              type="submit"
+              className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+            >
+              Register
+            </button>
+          </>
+        ) : (
+          <p className="text-red-500">Passwords do not match.</p>
+        )}
+      </form>
     </div>
   );
 }
