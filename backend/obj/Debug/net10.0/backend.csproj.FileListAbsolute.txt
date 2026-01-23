@@ -41,3 +41,4 @@
 /Users/tim.edvardsson/Documents/StudyMatch/backend/obj/Debug/net10.0/backend.pdb
 /Users/tim.edvardsson/Documents/StudyMatch/backend/obj/Debug/net10.0/backend.genruntimeconfig.cache
 /Users/tim.edvardsson/Documents/StudyMatch/backend/obj/Debug/net10.0/ref/backend.dll
+/Users/tim.edvardsson/Documents/StudyMatch/backend/bin/Debug/net10.0/appsettings.example.json
