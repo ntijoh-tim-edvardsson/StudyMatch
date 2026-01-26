@@ -97,3 +97,7 @@ coverage/
 reports/
 .idea/
 *.iml
+
+# .NET build output
+backend/bin/
+backend/obj/
