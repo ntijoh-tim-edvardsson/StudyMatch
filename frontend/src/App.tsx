@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 import LoginPage from './pages/LoginPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
+import MyProfile from './pages/MyProfile.tsx'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/myprofile" element={<MyProfile />} />
     </Routes>
   )
 }
