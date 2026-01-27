@@ -1,1 +1,13 @@
 @import "tailwindcss";
+@import "flowbite";
+
+
+@layer base {
+  /* Custom base styles can go here */
+  input::placeholder {
+    font-weight: 300; /* Light font weight */
+    font-style: italic;
+    color: #9ca3af; /* Tailwind's gray-400 */
+    opacity: 0.75;
+  }
+}
