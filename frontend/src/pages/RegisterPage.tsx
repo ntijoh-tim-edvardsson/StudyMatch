@@ -46,7 +46,7 @@ export default function RegisterPage() {
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
-        {password && confirmPassword && password === confirmPassword ? (
+        { password && confirmPassword && password === confirmPassword ? (
           <>
             <p className="text-green-600">Passwords match!</p>
             <button
@@ -56,9 +56,10 @@ export default function RegisterPage() {
               Register
             </button>
           </>
-        ) : (
+        ) : ( password.length != 0 &&
           <p className="text-red-500">Passwords do not match.</p>
         )}
+
       </form>
     </div>
   );
