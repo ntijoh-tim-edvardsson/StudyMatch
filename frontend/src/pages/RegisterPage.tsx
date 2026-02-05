@@ -1,18 +1,33 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../api/userApi";
 
 export default function RegisterPage() {
   //define state variables for form inputs
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    navigate("/myprofile");
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    try{
+      //call api
+
+      const newUser = await registerUser({Name: "Test User", Email: email, Password: password});
+      
+      console.log("User registered:", newUser);
+      navigate("/myprofile");
+    } catch (err:any) {
+      setError(err.message);
+    }
   }
 
   return (
